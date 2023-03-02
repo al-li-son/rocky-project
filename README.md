@@ -15,4 +15,17 @@ $$K_{right} = 2.98*10^{-3}$$
 $$\tau_{right} = 0.0519s$$
 
 ### b. Gyroscope Calibration
-Fixed Angle Correction: 0.28
+To calibrate the gyroscope, the gyroscope outputs with Rocky lying horizontally and vertically were found as follows:
+
+- Horizontal Reading: $\pm 1.66$
+- Vertical: 0.28
+- Fixed Angle Correction: 0.28
+
+
+To calculate the natural frequency of the system, gyroscope data was collected while letting Rocky swing back and forth. By plotting the gyroscope output over time, the natural frequency could be calculated by finding the number of cycles per second and converting to radians per second:
+$$\omega_{n} = 8.28rad/s$$
+
+From the natural frequency, the effective length of the rod was determined as follows:
+
+$$\omega_{n} = \sqrt{\frac{g}{l_{eff}}}$$
+$$l_{eff} = 0.143m$$
