@@ -38,7 +38,7 @@ pretty(simplify(Hcloop))       % to display the total transfer function
 % Substitute parameters and solve
 % system parameters
 g = 9.81;
-l = 0.45  %effective length 
+l = 0.45;  %effective length 
 a = 1/0.05;           %nominal motor parameters
 b = 3e-3;        %nominal motor parameters
 
