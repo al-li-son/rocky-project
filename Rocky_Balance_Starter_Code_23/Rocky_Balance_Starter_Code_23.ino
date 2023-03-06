@@ -86,14 +86,11 @@ void BalanceRocky()
 
     // **************Enter the control parameters here
     
-  float Kp = 447;
-  float Ki = 3894;
-  float Cp = 60;
-  float Ci = 30;   
-  float Jp = 60;
-  float Ji = 20;
-
-
+  float Kp = 65.65;
+  float Ki = 302.1;
+  float Ci = -76.1;   
+  float Jp = 2.265;
+  float Ji = -48.104;
 
 
     float v_c_L, v_c_R; // these are the control velocities to be sent to the motors
@@ -120,12 +117,8 @@ void BalanceRocky()
   // right to left. This helps ensure that the Left and Right motors are balanced
 
   // *** enter equations for input signals for v_c (left and right) in terms of the variables available ****
-    v_c_R = v_d; // + Jp * measured_speedR + Ji * distRight_m + Cp * distRight_m + Ci * dist_accum;
-    v_c_L = v_d; // Jp * measured_speedL + Ji * distLeft_m + Cp * distLeft_m + Ci * dist_accum;
-
-
-
-
+    v_c_R = (v_d + Jp * measured_speedR + Ji * distRight_m + Ci * dist_accum);
+    v_c_L = (v_d + Jp * measured_speedL + Ji * distLeft_m + Ci * dist_accum);
 
 
     // save desired speed for debugging
@@ -141,6 +134,15 @@ void BalanceRocky()
    
     // Set the motor speeds
     motors.setSpeeds((int16_t) (v_c_L), (int16_t)(v_c_R));
+
+    Serial.print("angle_rad= ");
+    Serial.println(angle_rad);
+    Serial.print("v_d= ");
+    Serial.println(v_d);
+    Serial.print("v_c_R= ");
+    Serial.println(desSpeedR);
+    Serial.print("v_c_L= ");
+    Serial.println(desSpeedL);
 
 }
 
