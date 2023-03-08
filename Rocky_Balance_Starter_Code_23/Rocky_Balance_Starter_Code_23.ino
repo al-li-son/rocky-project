@@ -68,7 +68,7 @@ Balboa32U4Buzzer buzzer;
 Balboa32U4ButtonA buttonA;
 
 
-#define FIXED_ANGLE_CORRECTION (0.28)  // ***** Replace the value 0.25 with the value you obtained from the Gyro calibration procedure
+#define FIXED_ANGLE_CORRECTION (0.26)  // ***** Replace the value 0.25 with the value you obtained from the Gyro calibration procedure
 
 
 
@@ -86,11 +86,11 @@ void BalanceRocky()
 
     // **************Enter the control parameters here
     
-  float Kp = 65.65;
-  float Ki = 302.1;
-  float Ci = -76.1;   
-  float Jp = 2.265;
-  float Ji = -48.104;
+  float Kp = 2670.4;
+  float Ki = 11064;
+  float Ci = -719.58;   
+  float Jp = 78.59;
+  float Ji = -1025.4;
 
 
     float v_c_L, v_c_R; // these are the control velocities to be sent to the motors
@@ -234,7 +234,16 @@ void balanceResetAccumulators()
     speed_err_right_acc = 0.0;
 }
 
-
+void balanceResetParameters()
+{
+    angle_rad = 0;
+    angle_rad_accum = 0;
+    measured_speedR = 0;
+    measured_speedL = 0;
+    distLeft_m = 0;
+    distRight_m = 0;
+    dist_accum = 0;
+}
 
 void loop()
 {
@@ -267,6 +276,7 @@ void loop()
     if(start_counter > 30)
     {
       balanceResetEncoders();
+      balanceResetParameters();
       start_flag = 1;
       buzzer.playFrequency(DIV_BY_10 | 445, 1000, 15);
       Serial.println("Starting");
