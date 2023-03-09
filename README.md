@@ -9,23 +9,38 @@ Given a unit step input of $v_c(t) = V_{step} * u(t)$, the time domain reponse f
 $$v(t) = V_{step}K(1 - e^{\frac{1}{\tau}t})$$
 
 Linear velocity data was collected for each wheel of Rocky for a step input of $V_{step} = 300$. By fitting the time domain response equation to the collected data, the motor parameters $K$ and $\tau$ for each motor were determined to be:
-$$K_{left} = 3.05*10^{-3}$$
-$$\tau_{left} = 0.051s$$
-$$K_{right} = 2.98*10^{-3}$$
-$$\tau_{right} = 0.0519s$$
+$$K_{left} = 0.00333$$
+$$\tau_{left} = 0.0506s$$
+$$K_{right} = 0.00335$$
+$$\tau_{right} = 0.0515s$$
+
+<!--TODO: Motor cal curve fit plot-->
 
 ### b. Gyroscope Calibration
 To calibrate the gyroscope, the gyroscope outputs with Rocky lying horizontally and vertically were found as follows:
 
 - Horizontal Reading: $\pm 1.66$
-- Vertical: 0.28
-- Fixed Angle Correction: 0.28
+- Vertical: 0.26
+- Fixed Angle Correction: 0.26
 
-
+### c. Natural Frequency
 To calculate the natural frequency of the system, gyroscope data was collected while letting Rocky swing back and forth. By plotting the gyroscope output over time, the natural frequency could be calculated by finding the number of cycles per second and converting to radians per second:
-$$\omega_{n} = 8.28rad/s$$
+$$\omega_{n} = 4.0998 rad/s$$
 
 From the natural frequency, the effective length of the rod was determined as follows:
 
 $$\omega_{n} = \sqrt{\frac{g}{l_{eff}}}$$
-$$l_{eff} = 0.143m$$
+$$l_{eff} = 0.5836m$$
+
+<!--TODO: Gyro cal plot-->
+
+### d. Performance Specifications
+### e. Poles
+### f. Controller Parameters
+### g. Simulink Model
+<!--TODO: Picture of Simlink block model-->
+
+## Stationary Balancing System
+### h. Rocky Balancing Code
+### g. Rocky Simulink Model
+### Demos

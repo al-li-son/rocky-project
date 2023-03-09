@@ -86,13 +86,11 @@ void BalanceRocky()
 
     // **************Enter the control parameters here
     
-  float Kp = 0;
-  float Ki = 0;
-  float Ci = 0;   
-  float Jp = 0;
-  float Ji = 0;
-
-
+  float Kp = 2670.4;
+  float Ki = 11064;
+  float Ci = -719.58;   
+  float Jp = 78.59;
+  float Ji = -1025.4;
 
 
     float v_c_L, v_c_R; // these are the control velocities to be sent to the motors
@@ -109,7 +107,7 @@ void BalanceRocky()
    // dist_accum - integral of the distance
 
    // *** enter an equation for v_d in terms of the variables available ****
-    v_d =  // this is the desired velocity from the angle controller 
+    v_d = Kp * angle_rad + Ki * angle_rad_accum; // this is the desired velocity from the angle controller 
       
 
   // The next two lines implement the feedback controller for the motor. Two separate velocities are calculated. 
@@ -119,12 +117,8 @@ void BalanceRocky()
   // right to left. This helps ensure that the Left and Right motors are balanced
 
   // *** enter equations for input signals for v_c (left and right) in terms of the variables available ****
-    v_c_R = 
-    v_c_L =        
-
-
-
-
+    v_c_R = (v_d + Jp * measured_speedR + Ji * distRight_m + Ci * dist_accum);
+    v_c_L = (v_d + Jp * measured_speedL + Ji * distLeft_m + Ci * dist_accum);
 
 
     // save desired speed for debugging
@@ -140,6 +134,15 @@ void BalanceRocky()
    
     // Set the motor speeds
     motors.setSpeeds((int16_t) (v_c_L), (int16_t)(v_c_R));
+
+    Serial.print("angle_rad= ");
+    Serial.println(angle_rad);
+    Serial.print("v_d= ");
+    Serial.println(v_d);
+    Serial.print("v_c_R= ");
+    Serial.println(desSpeedR);
+    Serial.print("v_c_L= ");
+    Serial.println(desSpeedL);
 
 }
 
@@ -231,7 +234,16 @@ void balanceResetAccumulators()
     speed_err_right_acc = 0.0;
 }
 
-
+void balanceResetParameters()
+{
+    angle_rad = 0;
+    angle_rad_accum = 0;
+    measured_speedR = 0;
+    measured_speedL = 0;
+    distLeft_m = 0;
+    distRight_m = 0;
+    dist_accum = 0;
+}
 
 void loop()
 {
@@ -264,6 +276,7 @@ void loop()
     if(start_counter > 30)
     {
       balanceResetEncoders();
+      balanceResetParameters();
       start_flag = 1;
       buzzer.playFrequency(DIV_BY_10 | 445, 1000, 15);
       Serial.println("Starting");
