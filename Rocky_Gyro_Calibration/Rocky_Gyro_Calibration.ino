@@ -13,7 +13,7 @@
 //    You will have to subtract this value out of your angle measurement 
 //    in your actual code 
 //    by replacing the value 0.25 in the follwing line of code 
-//      #define FIXED_ANGLE_CORRECTION (0.25)
+      #define FIXED_ANGLE_CORRECTION (0.27)
 //    in your balancing sketch
 //
 // The procedure for natural frequency measurement: 
