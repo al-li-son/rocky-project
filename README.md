@@ -9,10 +9,10 @@ Given a unit step input of $v_c(t) = V_{step} * u(t)$, the time domain reponse f
 $$v(t) = V_{step}K(1 - e^{\frac{1}{\tau}t})$$
 
 Linear velocity data was collected for each wheel of Rocky for a step input of $V_{step} = 300$. By fitting the time domain response equation to the collected data, the motor parameters $K$ and $\tau$ for each motor were determined to be:
-$$K_{left} = 0.00344$$
-$$\tau_{left} = 0.05643s$$
-$$K_{right} = 0.00336$$
-$$\tau_{right} = 0.05724s$$
+$$K_{left} = 0.00275$$
+$$\tau_{left} = 0.05122s$$
+$$K_{right} = 0.002644$$
+$$\tau_{right} = 0.05315s$$
 
 <!--TODO: Motor cal curve fit plot-->
 
