@@ -20,14 +20,14 @@ $$\tau_{right} = 0.05817s$$
 
 ![Right wheel curve fit](media/right-wheel-curve-fit-plot.png)
 
-### b. Gyroscope Calibration
+### Gyroscope Calibration
 To calibrate the gyroscope, the gyroscope output values were recorded with Rocky lying horizontally and vertically:
 
 - Horizontal Reading: $\pm 1.66$
 - Vertical: 0.26
 - Fixed Angle Correction: 0.26
 
-### c. Natural Frequency and Effective Length
+### Natural Frequency and Effective Length
 To calculate the natural frequency of the system, gyroscope data was collected while Rocky swung back and forth. Plotting the gyroscope data over time, the period of the first swing was found to be 1.3 seconds.
 
 ![Gyroscope data plot](media/gyroscope-data-plot.png)
