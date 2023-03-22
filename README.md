@@ -81,7 +81,7 @@ Below is a MATLAB Simulink Model of the control loop, using the determined contr
 With the balancing (non stationary) model, the output behavior shows Rocky stable, but moving at a constant velocity. A new model with added control loops will allow Rocky stay in one place while balancing. 
 
 ## Stationary Balancing System
-The initial system controls balancing the Rocky by angle, but does not prevent it from moving forward or backwards. Additional control loops to control for displacement and velocity are necessary to create a stationary balancing system.
+The initial system controls balancing the Rocky by angle, but does not prevent it from moving forward or backwards. Additional control loops to control for displacement and velocity are necessary to create a stationary balancing system. The full control system diagram is shown below:
 
 ![Stationary control loop](media/stationary-control-loop.png)
 
@@ -93,6 +93,20 @@ $$Pole\ 2 = -1 - i $$
 $$Pole\ 3 = -10 $$
 $$Pole\ 4 = -8 $$
 $$Pole\ 5 = -5 $$
+
+### Controller Parameters
+
+The controller parameters, Kp, Ki, Jp, Ji, and Ci were determined using the poles above and the provided "Rocky_5_closed_loop_poles.m" MATLAB script:
+
+$$K_p = 3427$$
+
+$$K_i = 14199$$
+
+$$J_p = 113.383$$
+
+$$J_i = -1316$$
+
+$$C_i = -923.537$$
 
 ### Simulink Model
 Below is a MATLAB Simulink Model of the control loop for the stationary balancing system, using the determined control parameters.
@@ -108,3 +122,6 @@ Below are the simulation plots for angle, velocity, and position are.
 <img src="media/stationary-velocity-sim.png" width="500"></img>
 
 ### Demos
+[Stationary balancing demonstration](https://youtube.com/shorts/oUcXM9oxZsg?feature=share)
+
+[Silly Rocky battle](https://youtube.com/shorts/mRkmF4rrlKY?feature=share)
