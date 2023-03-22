@@ -71,11 +71,11 @@ Below is a MATLAB Simulink Model of the control loop, using the determined contr
 
 ![Block diagram closed loop](media/simulink-model-balance.png)
 
-<img src="media/model-1-angle-plot.png" width="500">
+<img src="media/model-1-angle-plot.png" width="500"></img>
 
-<img src="media/model-1-position-plot.png" width="500">
+<img src="media/model-1-position-plot.png" width="500"></img>
 
-<img src="media/model-1-velocity-plot.png" width="500">
+<img src="media/model-1-velocity-plot.png" width="500"></img>
 
 
 With the balancing (non stationary) model, the output behavior shows Rocky stable, but moving at a constant velocity. A new model with added control loops will allow Rocky stay in one place while balancing. 
@@ -99,8 +99,10 @@ Below is a MATLAB Simulink Model of the control loop for the stationary balancin
 
 Below are the simulation plots for angle, velocity, and position are.
 
-![Stationary angle](media/stationary-angle-sim.png)
-![Stationary velocity](media/stationary-velocity-sim.png)
-![Stationary displacement](media/stationary-position-sim.png)
+<img src="media/stationary-angle-sim.png" width="500"></img>
+
+<img src="media/stationary-position-sim.png" width="500"></img>
+
+<img src="media/stationary-velocity-sim.png" width="500"></img>
 
 ### Demos
