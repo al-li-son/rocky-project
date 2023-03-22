@@ -1,5 +1,5 @@
 # Stationary Balacing Robot Control Project
-*Featuring: Rockilton "Large-clif" McGee IV*
+*Featuring: Rockilton "Large-cliff" McGee IV*
 
 ## Initial System
 ### Motor Parameter Estimation
@@ -82,6 +82,8 @@ With the balancing (non stationary) model, the output behavior shows Rocky stabl
 
 ## Stationary Balancing System
 The initial system controls balancing the Rocky by angle, but does not prevent it from moving forward or backwards. Additional control loops to control for displacement and velocity are necessary to create a stationary balancing system.
+
+![Stationary control loop](media/stationary-control-loop.png)
 
 ### Poles
 The stationary balancing system has five poles: three real poles and two imaginary poles (complex conjugate pair). The pair of imaginary poles are dominant, and thus have real components that are the furthest towards the right on the real axis of the pole plot. The imaginary component is relatively small as to not cause too large of an oscillatory response from a disturbance. The poles were tuned experimentally. The chosen poles are as follows:
