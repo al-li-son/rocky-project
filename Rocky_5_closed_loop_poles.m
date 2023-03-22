@@ -61,8 +61,8 @@ Hcloop_sub = subs(Hcloop) % sub parameter values into Hcloop
 
 p1 = -1 + 1*i   % dominant pole pair
 p2 = -1 -1*i    % dominant pole pair 
-p3 = -8
-p4 = -10    % dominant pole pair
+p3 = -10
+p4 = -8    % dominant pole pair
 p5 = -5     % dominant pole pair 
 
 % target characteristic polynomial
